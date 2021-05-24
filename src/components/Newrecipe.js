@@ -5,23 +5,24 @@ function NewRecipe() {
         <form>
             <lable>
                 Title:
-                <input type='text'></input>
+                <input type='text' placeholder='Enter Title here'></input>
             </lable>
             <lable>
                 Source:
-                <input type='text'></input>
+                <input type='text' placeholder='Source of the Recipe'></input>
             </lable>
             <lable>
                 Ingrediants: 
-                <input type='text'></input>
+                <input type='text' placeholder='List of Ingrediants'></input>
             </lable>
             <lable>
                 Instructions:
-                <input type='text'></input>
+                <input type='text' placeholder='What are the steps to make it'></input>
             </lable>
             <lable>
                 Catagory:
                 <select>
+                    <option>Pick a catagory</option>
                     <option>Dessert</option>
                     <option>Chicken</option>
                     <option>Side Dish</option>
