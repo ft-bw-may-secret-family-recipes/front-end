@@ -5,8 +5,8 @@ import Newrecipe from './components/Newrecipe';
 function App() {
   return (
     <div className="App">
-        <Recipe/>
         <Newrecipe/>
+        <Recipe/>
     </div>
   );
 }
