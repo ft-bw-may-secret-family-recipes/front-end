@@ -1,7 +1,15 @@
 import React from 'react';
+import styled from 'styled-components';
+
+const Form = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+`;
 
 function NewRecipe() {
     return(
+      <Form>
         <form>
             <lable>
                 Title:
@@ -17,7 +25,7 @@ function NewRecipe() {
             </lable>
             <lable>
                 Instructions:
-                <input type='text' placeholder='What are the steps to make it'></input>
+                <input type='text' placeholder='How to Make'></input>
             </lable>
             <lable>
                 Catagory:
@@ -31,6 +39,10 @@ function NewRecipe() {
                 </select>
             </lable>
         </form>
+        <submit>
+            <button>Add Recipe</button>
+        </submit>
+      </Form>
     )
 }
 
