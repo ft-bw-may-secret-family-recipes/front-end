@@ -1,13 +1,14 @@
 import React from 'react';
+import styled from 'styled-components';
 
 function Recipe() {
     return(
         <div>
-            <h3>Title: {title}</h3>
-            <h4>Source: {source}</h4>
-            <p>Ingrediants: {ingrediants}</p>
-            <p>Insctructions: {instructions}</p>
-            <h4>Catagory: {catagory}</h4>
+            <h3>Title: test</h3>
+            <h4>Source: test</h4>
+            <p>Ingrediants: test</p>
+            <p>Insctructions: test</p>
+            <h4>Catagory: test</h4>
         </div>
     )
 }
