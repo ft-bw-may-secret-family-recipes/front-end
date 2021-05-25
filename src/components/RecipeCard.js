@@ -1,5 +1,6 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import styled from 'styled-components';
+import axios from 'axios';
 
 const Div = styled.div`
     background-color: #A1978F;
@@ -7,6 +8,22 @@ const Div = styled.div`
     margin: auto;
 `;
 function Recipe() {
+
+
+    const [recipe, setRecipe] = uesState([])
+
+   const Call = useEffect=>{
+        axios
+        .get('')
+        .then((res)=>{
+            console.log(res)
+            setRecipe(res)
+        })
+        .catch((err)=>{
+            console.log(err)
+        })
+    }
+
     return(
         <Div>
             <h3>Title: test</h3>
