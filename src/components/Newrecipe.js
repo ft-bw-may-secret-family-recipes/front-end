@@ -10,39 +10,64 @@ const Form = styled.div`
 `;
 
 function NewRecipe() {
+
+    const onChange = (event) => {
+        const { title, source, ingrediants, instructions, catagory } = event.target;
+        change(title, source, ingrediants, instructions, catagory);
+    };
+
+    const onSubmit = (event) =>{
+        event.preventDefault();
+        submit();
+    };
+
     return(
       <Form>
         <form>
             <lable>
                 Title:
-                <input type='text' placeholder='Enter Title here'></input>
+                <input type='text' 
+                    placeholder='Enter Title here'
+                    id='title'
+                    onChange={onChange}/>
             </lable>
             <lable>
                 Source:
-                <input type='text' placeholder='Source of the Recipe'></input>
+                <input type='text'
+                    placeholder='Source of the Recipe'
+                    onChange={onChange}
+                    id='source'/>
             </lable>
             <lable>
                 Ingrediants: 
-                <input type='text' placeholder='List of Ingrediants'></input>
+                <input type='text' 
+                    placeholder='List of Ingrediants'
+                    id='ingrediants'
+                    onChange={onChange}/>
             </lable>
             <lable>
                 Instructions:
-                <input type='text' placeholder='How to Make'></input>
+                <input type='text' 
+                    placeholder='How to Make'
+                    onChange={onChange} 
+                    id='instructions'/>
             </lable>
             <lable>
                 Catagory:
-                <select>
+                <select id='catagory'
+                        onChange={onChange}>
                     <option>Pick a catagory</option>
                     <option>Dessert</option>
                     <option>Chicken</option>
                     <option>Side Dish</option>
                     <option>Beef</option>
                     <option>Pork</option>
+                    <option>Soup</option>
                 </select>
             </lable>
         </form>
         <submit>
-            <button>Add Recipe</button>
+            <button onSubmit={onSubmit}>Add Recipe</button>
         </submit>
       </Form>
     )
