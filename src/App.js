@@ -13,7 +13,6 @@ import SignUp from "./components/SignUp";
 // import Add from "./components/Add";
 // import PrivateRoute from "./components/PrivateRoute";
 import React from "react";
-import { Route } from "react-router-dom";
 
 
 function App() {

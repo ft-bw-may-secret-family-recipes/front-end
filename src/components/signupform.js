@@ -50,9 +50,9 @@ function SignUpForm(props) {
         name="user_email"
         type="text"
       />
-        <button>Create New User</button>
+      <button>Create New User</button>
     </form>
   );
 }
 
-export default SignUpForm
+export default SignUpForm;

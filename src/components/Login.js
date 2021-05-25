@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import LoginForm from "./LoginForm";
-import loginSchema from "./loginSchema"
+import LogInForm from "./LoginForm";
+import loginSchema from "./loginSchema";
 import * as yup from "yup";
 import axios from "axios";
 import { useHistory } from "react-router";
@@ -18,8 +18,7 @@ const LogIn = (props) => {
   const [formValues, setFormValues] = useState(initialFormValues);
   const [formErrors, setFormErrors] = useState(initialFormErrors);
   const { push } = useHistory();
-  
-  
+
   const inputChange = (name, value) => {
     yup
       .reach(loginSchema, name)
@@ -54,7 +53,7 @@ const LogIn = (props) => {
 
   return (
     <div>
-      <LoginForm
+      <LogInForm
         formValues={formValues}
         submit={submitForm}
         change={inputChange}
@@ -62,6 +61,6 @@ const LogIn = (props) => {
       />
     </div>
   );
-}
+};
 
 export default LogIn;

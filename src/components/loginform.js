@@ -11,9 +11,10 @@ function LogInForm(props) {
 
   const onChange = (evt) => {
     const { name, value, checked, type } = evt.target;
-    change(name, 
+    change(
+      name
       // valueToUse
-      );
+    );
   };
   return (
     <form id="logInForm" className="formContainer" onsubmit={onSubmit}>
@@ -47,8 +48,8 @@ function LogInForm(props) {
         name="email"
         type="text"
       /> */}
-      
-        <button>Login</button>
+
+      <button>Login</button>
     </form>
   );
 }
