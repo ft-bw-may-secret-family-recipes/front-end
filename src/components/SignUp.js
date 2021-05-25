@@ -1,13 +1,31 @@
-import React from "react";
-import LogInPage from "./Login";
-import SignUpForm from "./signupform";
+import React, { useEffect, useState } from "react";
+import LogIn from "./Login";
+import SignUpForm from "./SignUpForm";
+import signupSchema from "./signupSchema";
+import { Route } from "react-router-dom";
+import axios from "axios";
+import { useHistory } from "react-router-dom";
+import * as yup from "yup";
+
+const initialFormValues = {
+  user_username: "",
+  user_password: "",
+  user_email: "",
+}
+
+const initialFormErrors = {
+  user_username: "",
+  user_password: "",
+  user_email: "",
+}
 
 const SignUpPage = () => {
-  const [formValues, setFormValues] = useState({
-    user_username: "",
-    user_password: "",
-    user_email: "",
-  });
+  const [formValues, setFormValues] = useState(initialFormValues);
+  const [formErrors, setFormErrors] = useState(initialFormErrors);
+  const [disabled, setDisabled] = useState(true);
+
+  const { push } = useHistory()
+
 
   //   const postNewOrder = (newOrder) => {
   //     axios
@@ -24,38 +42,57 @@ const SignUpPage = () => {
   //       });
   //   };
 
+  useEffect(() => {
+    signupSchema.isValid(formValues).then((valid) => {
+      setDisabled(!valid);
+    });
+  }, [formValues]);
+
   const inputChange = (name, value) => {
-    validate(name, value);
+    yup
+      .reach(signupSchema, name)
+      .validate(value)
+      .then(() => {
+        setFormErrors({ ...formErrors, [name]: "" });
+      })
+      .catch((err) => {
+        setFormErrors({ ...formErrors, [name]: err.errors[0] });
+      });
+
     setFormValues({
       ...formValues,
       [name]: value,
     });
   };
-  const formSubmit = () => {
-    const newOrder = {
-      user_name: formValues.user_name,
-      user_password: formValues.user_password,
-      user_email: formValues.user_email,
-    };
-    postNewOrder(newOrder);
-  };
 
+  const submitForm = (e) => {
+    e.preventDefault()
+    const data = {name: formValues.name, email: formValues.email, password: formValues.password, phone: formValues.phone,}
+    axios
+    .post("https://ft-bw-may-secret-family-recipe.herokuapp.com/api/auth/register", data)
+    .then((resObj) => {
+      console.log("signup res", resObj)
+      push("/login")
+      //route to plant collection
+    })
+    .catch(err => console.log({err}))
+  }
   return (
     <div>
       <SignUpForm
         formValues={formValues}
-        submit={formSubmit}
+        submit={submitForm}
         change={inputChange}
-        errors={formErrors}
+        // errors={formErrors}
       />
-      <Route>
-        <LogInPage
+      {/* <Route>
+        <LogIn
           formValues={formValues}
           submit={formSubmit}
           change={inputChange}
-          errors={formErrors}
+          // errors={formErrors}
         />
-      </Route>
+      </Route> */}
     </div>
   );
 };

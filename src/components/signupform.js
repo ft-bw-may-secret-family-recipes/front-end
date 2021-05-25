@@ -1,5 +1,6 @@
 import React from "react";
-import LogInPage from "./Login";
+import LogIn from "./Login";
+import { Route, Link } from "react-router-dom";
 
 function SignUpForm(props) {
   const { formValues, submit, change, errors } = props;
@@ -14,15 +15,15 @@ function SignUpForm(props) {
 
   const onChange = (evt) => {
     const { name, value, checked, type } = evt.target;
-    change(name, valueToUse);
+    change(name, value);
   };
 
   return (
     <form id="signUpForm" className="formContainer" onsubmit={onSubmit}>
       <div className="errors">
-        <div>{errors.user_username}</div>
+        {/* <div>{errors.user_username}</div>
         <div>{errors.user_password}</div>
-        <div>{errors.user_email}</div>
+        <div>{errors.user_email}</div> */}
       </div>
       <h1>Sign up Below</h1>
       <label>Username:</label>
@@ -38,7 +39,7 @@ function SignUpForm(props) {
         id="password-input"
         value={formValues.user_password}
         onChange={onChange}
-        name="password"
+        name="user_password"
         type="text"
       />
       <label>Email:</label>
@@ -46,15 +47,12 @@ function SignUpForm(props) {
         id="email-input"
         value={formValues.user_email}
         onChange={onChange}
-        name="email"
+        name="user_email"
         type="text"
       />
-      <Link to="/login">
         <button>Create New User</button>
-      </Link>
-      <Route exact path="/login">
-        <LogIn />
-      </Route>
     </form>
   );
 }
+
+export default SignUpForm
