@@ -1,5 +1,7 @@
-import logo from './logo.svg';
 import './App.css';
+import Recipe from './components/RecipeCard';
+import Newrecipe from './components/Newrecipe';
+import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 
 import Dashboard from "./components/Dashboard";
 import Home from "./components/Home";
@@ -28,6 +30,8 @@ function App() {
       {/* <Route path="/add" component={Add} /> */}
       {/* <PrivateRoute path="/display" component={DisplayPage} /> */}
       <Route exact path="/dashboard" component={Dashboard} />
+      <Newrecipe/>
+      <Recipe/>
     </div>
   );
 }
