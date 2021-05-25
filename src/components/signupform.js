@@ -31,7 +31,7 @@ function SignUpForm(props) {
         id="username-input"
         value={formValues.user_name}
         onChange={onChange}
-        name="username"
+        name="user_username"
         type="text"
       />
       <label>Password:</label>
