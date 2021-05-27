@@ -1,6 +1,7 @@
 import React from "react";
 import LogIn from "./Login";
 import { Route, Link } from "react-router-dom";
+import StyledPage from "./StyledComponents";
 
 function SignUpForm(props) {
   const { formValues, submit, change, errors } = props;
@@ -19,39 +20,49 @@ function SignUpForm(props) {
   };
 
   return (
-    <form id="signUpForm" className="formContainer" onsubmit={onSubmit}>
-      <div className="errors">
-        {/* <div>{errors.user_username}</div>
+    <StyledPage>
+      <form id="signUpForm" className="formContainer" onsubmit={onSubmit}>
+        <div className="errors">
+          {/* <div>{errors.user_username}</div>
         <div>{errors.user_password}</div>
         <div>{errors.user_email}</div> */}
-      </div>
-      <h1>Sign up Below</h1>
-      <label>Username:</label>
-      <input
-        id="username-input"
-        value={formValues.user_name}
-        onChange={onChange}
-        name="user_username"
-        type="text"
-      />
-      <label>Password:</label>
-      <input
-        id="password-input"
-        value={formValues.user_password}
-        onChange={onChange}
-        name="user_password"
-        type="text"
-      />
-      <label>Email:</label>
-      <input
-        id="email-input"
-        value={formValues.user_email}
-        onChange={onChange}
-        name="user_email"
-        type="text"
-      />
-      <button>Create New User</button>
-    </form>
+        </div>
+        <h1>Sign up Below</h1>
+        <div className="spacingDiv">
+          <label>Username:</label>
+          <input
+            id="username-input"
+            value={formValues.user_name}
+            onChange={onChange}
+            name="user_username"
+            type="text"
+          />
+        </div>
+        <div className="spacingDiv">
+          <label>Password:</label>
+          <input
+            id="password-input"
+            value={formValues.user_password}
+            onChange={onChange}
+            name="user_password"
+            type="text"
+          />
+        </div>
+        <div className="spacingDiv">
+          <label>Email:</label>
+          <input
+            id="email-input"
+            value={formValues.user_email}
+            onChange={onChange}
+            name="user_email"
+            type="text"
+          />
+        </div>
+        <div className="spacingDiv">
+          <button>Create New User</button>
+        </div>
+      </form>
+    </StyledPage>
   );
 }
 

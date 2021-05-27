@@ -11,21 +11,20 @@ const initialFormValues = {
   user_username: "",
   user_password: "",
   user_email: "",
-}
+};
 
 const initialFormErrors = {
   user_username: "",
   user_password: "",
   user_email: "",
-}
+};
 
 const SignUpPage = () => {
   const [formValues, setFormValues] = useState(initialFormValues);
   const [formErrors, setFormErrors] = useState(initialFormErrors);
   const [disabled, setDisabled] = useState(true);
 
-  const { push } = useHistory()
-
+  const { push } = useHistory();
 
   //   const postNewOrder = (newOrder) => {
   //     axios
@@ -66,19 +65,27 @@ const SignUpPage = () => {
   };
 
   const submitForm = (e) => {
-    e.preventDefault()
-    const data = {name: formValues.name, email: formValues.email, password: formValues.password, phone: formValues.phone,}
+    e.preventDefault();
+    const data = {
+      name: formValues.name,
+      email: formValues.email,
+      password: formValues.password,
+      phone: formValues.phone,
+    };
     axios
-    .post("https://ft-bw-may-secret-family-recipe.herokuapp.com/api/auth/register", data)
-    .then((resObj) => {
-      console.log("signup res", resObj)
-      push("/login")
-      //route to plant collection
-    })
-    .catch(err => console.log({err}))
-  }
+      .post(
+        "https://ft-bw-may-secret-family-recipe.herokuapp.com/api/auth/register",
+        data
+      )
+      .then((resObj) => {
+        console.log("signup res", resObj);
+        push("/login");
+        //route to plant collection
+      })
+      .catch((err) => console.log({ err }));
+  };
   return (
-    <div>
+    <div id="SignUpPage">
       <SignUpForm
         formValues={formValues}
         submit={submitForm}

@@ -52,7 +52,7 @@ const LogIn = (props) => {
   };
 
   return (
-    <div>
+    <div id="LogInPage">
       <LogInForm
         formValues={formValues}
         submit={submitForm}
