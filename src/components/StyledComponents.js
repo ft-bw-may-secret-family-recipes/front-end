@@ -17,8 +17,6 @@ const StyledPage = styled.div`
 
     background-repeat: no-repeat;
     background-position: center;
-    /* background-size: contain; */
-    /* object-fit: contain; */
   }
 
   h1 {
@@ -37,8 +35,6 @@ const StyledPage = styled.div`
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: black;
     font-size: 2.5rem;
-    /* border: 1px ridge black;
-        margin: 5px 5px; */
   }
   label {
     text-decoration: none;
