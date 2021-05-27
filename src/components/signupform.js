@@ -30,6 +30,7 @@ function SignUpForm(props) {
         <h1>Sign up Below</h1>
         <div className="spacingDiv">
           <label>Username:</label>
+          <br></br>
           <input
             id="username-input"
             value={formValues.user_name}
@@ -40,6 +41,7 @@ function SignUpForm(props) {
         </div>
         <div className="spacingDiv">
           <label>Password:</label>
+          <br></br>
           <input
             id="password-input"
             value={formValues.user_password}
@@ -50,6 +52,7 @@ function SignUpForm(props) {
         </div>
         <div className="spacingDiv">
           <label>Email:</label>
+          <br></br>
           <input
             id="email-input"
             value={formValues.user_email}
@@ -59,7 +62,7 @@ function SignUpForm(props) {
           />
         </div>
         <div className="spacingDiv">
-          <button>Create New User</button>
+          <button>Sign up</button>
         </div>
       </form>
     </StyledPage>

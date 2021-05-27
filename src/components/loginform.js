@@ -19,7 +19,12 @@ function LogInForm(props) {
   };
   return (
     <StyledPage>
-      <div id="logInForm">
+      <div
+        id="logInForm"
+        style={{
+          backgroundImage: `url('https://images.unsplash.com/photo-1481070555726-e2fe8357725c?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=375&q=80')`,
+        }}
+      >
         <form className="formContainer" onsubmit={onSubmit}>
           <div className="errors">
             {/* <div>{errors.user_username}</div>
